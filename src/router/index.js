@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-const AppLayout = () => import('@/components/AppLayout.vue')
+const AppLayout = () => import('@/layouts/AppLayout.vue')
 const ErrorComponent = () => import('@/components/ErrorComponent.vue')
 const CartPage = () => import('@/views/CartPage.vue')
 const CreateOrder = () => import('@/views/CreateOrder.vue')

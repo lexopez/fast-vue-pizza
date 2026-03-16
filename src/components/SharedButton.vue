@@ -1,5 +1,6 @@
 <script setup>
 defineProps({ type: String })
+defineEmits(['trigger'])
 const base =
   'inline-block text-sm rounded-full bg-yellow-400 font-semibold uppercase tracking-wide text-stone-800 transition-colors duration-300 hover:bg-yellow-300 focus:bg-yellow-300 focus:outline-none focus:ring focus:ring-yellow-300 focus:ring-offset-2 disabled:cursor-not-allowed'
 
@@ -13,7 +14,7 @@ const styles = {
 </script>
 
 <template>
-  <button :class="styles[type]">
+  <button :class="styles[type]" @click="$emit('trigger')">
     <slot></slot>
   </button>
 </template>
