@@ -2,6 +2,7 @@
 import CreateUser from '@/components/CreateUser.vue'
 import SharedButton from '@/components/SharedButton.vue'
 import { useUserStore } from '@/stores/userStore'
+import { RouterLink } from 'vue-router'
 
 const store = useUserStore()
 </script>
@@ -15,6 +16,8 @@ const store = useUserStore()
     </h1>
 
     <CreateUser v-if="store.username === ''" />
-    <SharedButton v-else type="primary">Continue ordering, {{ store.username }}</SharedButton>
+    <RouterLink v-else to="/menu">
+      <SharedButton type="primary"> Continue ordering, {{ store.username }} </SharedButton>
+    </RouterLink>
   </div>
 </template>
