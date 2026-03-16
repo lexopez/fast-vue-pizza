@@ -1,5 +1,9 @@
-<script setup lang="ts">
+<script setup>
 import CreateUser from '@/components/CreateUser.vue'
+import SharedButton from '@/components/SharedButton.vue'
+import { useUserStore } from '@/stores/userStore'
+
+const store = useUserStore()
 </script>
 
 <template>
@@ -10,6 +14,7 @@ import CreateUser from '@/components/CreateUser.vue'
       <span class="text-yellow-500"> Straight out of the oven, straight to you. </span>
     </h1>
 
-    <CreateUser />
+    <CreateUser v-if="store.username === ''" />
+    <SharedButton v-else type="primary">Continue ordering, {{ store.username }}</SharedButton>
   </div>
 </template>

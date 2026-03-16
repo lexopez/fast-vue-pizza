@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
-import { getAddress } from '../../services/apiGeocoding'
+import { getAddress } from '@/services/apiGeocoding'
 
 // Helper function remains the same
 function getPosition() {
