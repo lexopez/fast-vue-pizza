@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
 import SearchOrder from './SearchOrder.vue'
+import { useUserStore } from '@/stores/userStore'
+const store = useUserStore()
 </script>
 <template>
   <header
@@ -9,6 +11,6 @@ import SearchOrder from './SearchOrder.vue'
     <RouterLink to="/" class="tracking-widest"> Fast React Pizza Co. </RouterLink>
 
     <SearchOrder />
-    <div class="hidden text-sm font-semibold md:block">username</div>
+    <div class="hidden text-sm font-semibold md:block">{{ store.username }}</div>
   </header>
 </template>
