@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
-import AppHeader from './AppHeader.vue'
-import CartOverview from './CartOverview.vue'
+import AppHeader from '@/components/AppHeader.vue'
+import CartOverview from '@/components/CartOverview.vue'
 </script>
 
 <template>
