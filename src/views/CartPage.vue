@@ -1,6 +1,5 @@
 <script setup>
 import { RouterLink } from 'vue-router'
-import { cart } from '@/data/cart'
 import SharedButton from '@/components/SharedButton.vue'
 import UpdateItemQuantity from '@/components/UpdateItemQuantity.vue'
 import DeleteItem from '@/components/DeleteItem.vue'
