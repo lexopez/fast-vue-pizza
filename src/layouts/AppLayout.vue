@@ -2,6 +2,8 @@
 import { RouterView } from 'vue-router'
 import AppHeader from '@/components/AppHeader.vue'
 import CartOverview from '@/components/CartOverview.vue'
+import { useCartStore } from '@/stores/cartStore'
+const store = useCartStore()
 </script>
 
 <template>
@@ -14,6 +16,6 @@ import CartOverview from '@/components/CartOverview.vue'
       </main>
     </div>
 
-    <CartOverview />
+    <CartOverview v-if="store.getTotalCartQuantity" />
   </div>
 </template>
