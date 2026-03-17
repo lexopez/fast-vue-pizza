@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
+import ErrorComponent from '@/components/ErrorComponent.vue'
 const AppLayout = () => import('@/layouts/AppLayout.vue')
-const ErrorComponent = () => import('@/components/ErrorComponent.vue')
 const CartPage = () => import('@/views/CartPage.vue')
 const CreateOrder = () => import('@/views/CreateOrder.vue')
 const HomePage = () => import('@/views/HomePage.vue')
@@ -12,6 +12,7 @@ const routes = [
   {
     path: '/',
     component: AppLayout,
+    errorCaptured: ErrorComponent,
     children: [
       {
         path: '',
@@ -38,11 +39,15 @@ const routes = [
         name: 'order',
         component: OrderDetailsPage,
       },
+      {
+        path: '/:pathMatch(.*)*',
+        component: ErrorComponent,
+      },
     ],
   },
   {
     path: '/:pathMatch(.*)*',
-    compoenent: ErrorComponent,
+    component: ErrorComponent,
   },
 ]
 
